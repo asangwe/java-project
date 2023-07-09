@@ -1,0 +1,70 @@
+
+MariaDB [JavaLibraryApp]> create database jdbcapp;
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [JavaLibraryApp]> use jdbcapp;
+Database changed
+MariaDB [jdbcapp]> show tables
+    -> create table student(stid int,Firstname text,Lastname text,Regno varchar(13),Department varchar(40),Level int,CONSTRAINT const_stid primary key(stid));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'create table student(stid int,Firstname text,Lastname text,Regno varchar(13),...' at line 2
+MariaDB [jdbcapp]> create table student(stid int,Firstname text,Lastname text,Regno varchar(13),dob text,Department varchar(40),Level int,CONSTRAINT const_stid primary key(stid));
+Query OK, 0 rows affected, 1 warning (0.265 sec)
+
+MariaDB [jdbcapp]> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| stid       | int(11)     | NO   | PRI | NULL    |       |
+| Firstname  | text        | YES  |     | NULL    |       |
+| Lastname   | text        | YES  |     | NULL    |       |
+| Regno      | varchar(13) | YES  |     | NULL    |       |
+| dob        | text        | YES  |     | NULL    |       |
+| Department | varchar(40) | YES  |     | NULL    |       |
+| Level      | int(11)     | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.016 sec)
+
+MariaDB [jdbcapp]>
+
+
+create table student(stID int,firstname text,lastname text,regNo varchar(13),Dob date,phone varchar(13),department varchar(40,Level int,CONSTRAINT cons_stID primary key(stID));
+
+
+remember 
+import java.sql.*;
+int stID =Integer.parseInt(id.getText());
+String firstname=fname.getText();
+String lastname=lname.getText();
+String Regno=Regno.getText();
+String phone=phone.getText();
+String Level=leve.getText();(Level.getselectedItem().toString());
+String Department=Depart.getText();(department.getselectedItem().toString();
+
+/*the code for getting data from component
+/*database input variable setup */
+
+String db="jdbcapp";
+String user="root";
+String pwd="";
+String driver="com.mysql.cj.jdbc.Driver";
+String url="jdbc.mysql://localhost:3306/";
+/* database input variable setup */
+
+try{
+/*  code for database connection */
+
+class.forName(driver); /* setting the driver of jdbc */ creating driver 
+con=DriverManager.getconnection(url+db,user,pwd);//* db connection */ /
+st=con.createstatement(); /* how to create statement */
+String query="INSERT INTO student VALUES"+"('"+stid+"'+,'"+firstname+"','"+lastname+"','"+Regno+"','"+dob+"','"+department+"','"+Level+"','"+phone+"','");
+
+
+st.executeUpdate(query);
+JOptionPane.showMessageDialog(null,"data is successfully added ");
+con.close();
+}
+
+
+wifi:
+NetWork: LAB 2
+Password: Wireless_Net1
